@@ -228,20 +228,3 @@ The API runs at http://localhost:8000. Each request can take 20 to 90 seconds, b
 
 Postman's default timeout is fine, but the first request on a sleeping Render server can take an extra minute.
 
-## Deploy on Render
-
-1. Push this repo to GitHub.
-2. In the Render dashboard, click **New +**, then **Web Service**, and pick this repo.
-3. Use these settings:
-
-| Setting | Value |
-|---|---|
-| **Language** | Python 3 |
-| **Build command** | `pip install -r requirements.txt` |
-| **Start command** | `uvicorn app:app --host 0.0.0.0 --port $PORT` |
-| **Environment variables** | `GEMINI_API_KEY` = your Gemini key<br>`PYTHON_VERSION` = `3.11.9` |
-
-4. Click **Create Web Service**. The backend goes live at `https://<your-service>.onrender.com`, with routes at `/agent1` to `/agent10`.
-
-The free plan sleeps after 15 minutes without traffic, so the first request after a pause takes about a minute.
-If the build fails with "Out of memory", switch the instance type to **Starter**.
