@@ -1,0 +1,8 @@
+fastapi==0.161.1
+uvicorn==0.54.0
+crewai[google-genai]==1.15.28
+crewai-tools==1.15.28
+ddgs==9.16.0
+pandas==3.0.5
+pydantic==2.12.5
+python-dotenv==1.2.3
